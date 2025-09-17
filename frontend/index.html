@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Chamados</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Últimos 10 Chamados</h2>
+        <table class="chamados-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Data de Criação</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="chamadosList">
+            </tbody>
+        </table>
+    <button id="btnNovoChamado">Novo Chamado</button>
+    <a href="gerenciar.html" class="crud-link">Acessar Gerenciamento (CRUD)</a>
+    </div>
+
+    <!-- Modal de Novo Chamado -->
+    <div id="modalChamado" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h3>Novo Chamado</h3>
+            <form id="formChamado">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Aberto">Aberto</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Fechado">Fechado</option>
+                </select>
+                <button type="submit" id="btnSalvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

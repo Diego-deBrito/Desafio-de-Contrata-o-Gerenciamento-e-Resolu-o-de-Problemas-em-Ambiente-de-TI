@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Gerenciar Chamados</title>
+    <link rel='stylesheet' href='css/style.css'>
+    <script src='js/main.js'></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Gerenciamento de Chamados</h2>
+        <button id="btnNovoChamado">Novo Chamado</button>
+        <table class="chamados-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Data de Criação</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="chamadosList">
+            </tbody>
+        </table>
+        <button id="btnImprimir">Imprimir</button>
+    </div>
+
+    <div id="modalChamado" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h3 id="modalTitulo">Detalhes do Chamado</h3>
+            <form id="formChamado">
+                <input type="hidden" id="chamadoId">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Aberto">Aberto</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Fechado">Fechado</option>
+                </select>
+                <div id="datasChamado" style="font-size:13px;color:#666;margin:8px 0;"></div>
+                <button type="submit" id="btnSalvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/gerenciar.js"></script>
+</body>
+</html>
